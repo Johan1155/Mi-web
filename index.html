@@ -3,21 +3,22 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>FuturoUSA - Plataforma completa visual</title>
+  <title>FuturoUSA - Plataforma para Inmigrantes</title>
   <link rel="stylesheet" href="style.css" />
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
 </head>
 <body>
 
   <nav class="navbar">
     <div class="container nav-container">
-      <a href="#" class="logo">FuturoUSA</a>
+      <a href="#" class="logo">Futuro<span>USA</span></a>
       <ul class="nav-links" id="nav-links">
         <li><a href="#inicio">Inicio</a></li>
-        <li><a href="#login">Login / Registro</a></li>
+        <li><a href="#servicios">Servicios</a></li>
         <li><a href="#comunidad">Comunidad</a></li>
-        <li><a href="#becas">Búsqueda de Becas</a></li>
-        <li><a href="#pagos">Pagos</a></li>
+        <li><a href="#testimonios">Testimonios</a></li>
+        <li><a href="#faq">FAQ</a></li>
         <li><a href="#contacto">Contacto</a></li>
       </ul>
       <button class="nav-toggle" id="nav-toggle" aria-label="Abrir menú">
@@ -28,103 +29,92 @@
 
   <header id="inicio" class="hero">
     <div class="container">
-      <h1>Bienvenidos a <span>FuturoUSA</span></h1>
-      <p>Tu plataforma para apoyar a inmigrantes que quieren estudiar en EE.UU.</p>
-      <a href="#contacto" class="btn-primary">Contáctanos</a>
+      <h1><span>FuturoUSA</span>: Tu futuro en Estados Unidos comienza hoy</h1>
+      <p>Recibe guía, apoyo y comunidad para ingresar a una universidad siendo inmigrante.</p>
+      <a href="#contacto" class="btn-primary">Empieza ahora</a>
     </div>
   </header>
 
-  <main class="container">
-    <!-- Login / Registro -->
-    <section id="login" class="section">
-      <h2>Login / Registro</h2>
-      <div class="auth-forms">
-        <form id="login-form" class="auth-form">
-          <h3>Iniciar sesión</h3>
-          <input type="email" placeholder="Correo electrónico" required />
-          <input type="password" placeholder="Contraseña" required />
-          <button type="submit" class="btn-primary">Entrar</button>
-        </form>
-        <form id="register-form" class="auth-form">
-          <h3>Registrar cuenta</h3>
-          <input type="text" placeholder="Nombre completo" required />
-          <input type="email" placeholder="Correo electrónico" required />
-          <input type="password" placeholder="Contraseña" required />
-          <button type="submit" class="btn-primary">Registrar</button>
-        </form>
+  <section id="servicios" class="section">
+    <div class="container">
+      <h2 class="section-title">Nuestros Servicios</h2>
+      <div class="cards">
+        <div class="card">
+          <i class="fas fa-graduation-cap"></i>
+          <h3>Tutorías</h3>
+          <p>Asesoría personalizada para ayudarte con inscripciones, exámenes y procesos de admisión.</p>
+        </div>
+        <div class="card">
+          <i class="fas fa-file-alt"></i>
+          <h3>Requisitos</h3>
+          <p>Todo lo que necesitas saber sobre documentación, visas y formularios.</p>
+        </div>
+        <div class="card">
+          <i class="fas fa-hand-holding-usd"></i>
+          <h3>Becas y Préstamos</h3>
+          <p>Acceso a información sobre ayuda financiera, becas y opciones de crédito estudiantil.</p>
+        </div>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <!-- Comunidad -->
-    <section id="comunidad" class="section">
-      <h2>Comunidad</h2>
-      <div class="comments">
-        <article class="comment">
-          <p><strong>Ana:</strong> ¿Alguien sabe cuándo abren las solicitudes para becas?</p>
-        </article>
-        <article class="comment">
-          <p><strong>Carlos:</strong> ¡Muy útil esta página, gracias!</p>
-        </article>
+  <section id="comunidad" class="section alt">
+    <div class="container">
+      <h2 class="section-title">Comunidad</h2>
+      <p>Comparte experiencias, consejos y resuelve dudas con otros estudiantes inmigrantes.</p>
+      <div class="comunidad-feed">
+        <blockquote>“Gracias a FuturoUSA encontré la beca perfecta para mí. – <strong>María</strong>”</blockquote>
+        <blockquote>“La sección de requisitos me ayudó a no cometer errores. – <strong>Andrés</strong>”</blockquote>
       </div>
-      <form id="comment-form" class="comment-form">
-        <textarea placeholder="Escribe tu comentario aquí..." required></textarea>
-        <button type="submit" class="btn-primary">Enviar comentario</button>
-      </form>
-    </section>
+    </div>
+  </section>
 
-    <!-- Búsqueda de Becas -->
-    <section id="becas" class="section">
-      <h2>Búsqueda de Becas</h2>
-      <form id="becas-form" class="search-form">
-        <input type="text" placeholder="Busca becas por palabra clave" />
-        <button type="submit" class="btn-primary">Buscar</button>
-      </form>
-      <div class="becas-results">
-        <article class="beca">
-          <h3>Beca para estudiantes internacionales</h3>
-          <p>Otorgada por Universidad XYZ. Monto: $2000 USD.</p>
-        </article>
-        <article class="beca">
-          <h3>Beca de apoyo para inmigrantes</h3>
-          <p>Disponible para residentes en EE.UU. Monto: $1500 USD.</p>
-        </article>
+  <section id="testimonios" class="section">
+    <div class="container">
+      <h2 class="section-title">Testimonios</h2>
+      <div class="cards">
+        <div class="card">
+          <p>“Nunca imaginé que el proceso de admisión pudiera ser tan sencillo con buena ayuda.”</p>
+          <span>- Laura, Venezuela</span>
+        </div>
+        <div class="card">
+          <p>“Me acompañaron en cada paso y hoy estudio en Texas gracias a FuturoUSA.”</p>
+          <span>- Juan, Colombia</span>
+        </div>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <!-- Pagos -->
-    <section id="pagos" class="section">
-      <h2>Pagos</h2>
-      <form id="pagos-form" class="payment-form">
-        <label for="card-number">Número de tarjeta</label>
-        <input type="text" id="card-number" placeholder="1234 5678 9012 3456" required />
-        <label for="expiry">Fecha de expiración</label>
-        <input type="text" id="expiry" placeholder="MM/AA" required />
-        <label for="cvv">CVV</label>
-        <input type="text" id="cvv" placeholder="123" required />
-        <button type="submit" class="btn-primary">Pagar</button>
+  <section id="faq" class="section alt">
+    <div class="container">
+      <h2 class="section-title">Preguntas Frecuentes</h2>
+      <ul class="faq-list">
+        <li><strong>¿Necesito tener papeles para aplicar?</strong><br>Sí, pero hay opciones también para estudiantes indocumentados.</li>
+        <li><strong>¿Ofrecen tutorías gratuitas?</strong><br>Algunas tutorías son sin costo, otras tienen tarifa reducida.</li>
+        <li><strong>¿En qué idiomas está disponible?</strong><br>Español, Inglés, Portugués y más próximamente.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="contacto" class="section">
+    <div class="container">
+      <h2 class="section-title">Contáctanos</h2>
+      <form class="form">
+        <input type="text" placeholder="Tu nombre" required>
+        <input type="email" placeholder="Tu correo" required>
+        <textarea placeholder="Escribe tu mensaje..." required></textarea>
+        <button type="submit" class="btn-primary">Enviar mensaje</button>
       </form>
-    </section>
+    </div>
+  </section>
 
-    <!-- Contacto -->
-    <section id="contacto" class="section">
-      <h2>Contacto</h2>
-      <form id="contact-form">
-        <label for="name">Nombre</label>
-        <input type="text" id="name" placeholder="Tu nombre" required />
-        <label for="email">Correo electrónico</label>
-        <input type="email" id="email" placeholder="Tu correo" required />
-        <label for="message">Mensaje</label>
-        <textarea id="message" rows="4" placeholder="Escribe tu mensaje" required></textarea>
-        <button type="submit" class="btn-primary">Enviar</button>
-      </form>
-      <p id="form-message" class="form-message"></p>
-    </section>
-  </main>
-
-  <footer>
-    &copy; 2025 FuturoUSA - Todos los derechos reservados
+  <footer class="footer">
+    <div class="container">
+      <p>&copy; 2025 FuturoUSA. Todos los derechos reservados.</p>
+    </div>
   </footer>
 
   <script src="script.js"></script>
 </body>
 </html>
+
