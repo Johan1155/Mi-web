@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>FuturoUSA - Ayuda para inmigrantes</title>
+  <title>FuturoUSA - Plataforma completa visual</title>
   <link rel="stylesheet" href="style.css" />
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet" />
 </head>
@@ -14,10 +14,10 @@
       <a href="#" class="logo">FuturoUSA</a>
       <ul class="nav-links" id="nav-links">
         <li><a href="#inicio">Inicio</a></li>
-        <li><a href="#que-es">¿Qué es?</a></li>
-        <li><a href="#tutorias">Tutorías</a></li>
-        <li><a href="#becas">Requisitos y Becas</a></li>
+        <li><a href="#login">Login / Registro</a></li>
         <li><a href="#comunidad">Comunidad</a></li>
+        <li><a href="#becas">Búsqueda de Becas</a></li>
+        <li><a href="#pagos">Pagos</a></li>
         <li><a href="#contacto">Contacto</a></li>
       </ul>
       <button class="nav-toggle" id="nav-toggle" aria-label="Abrir menú">
@@ -29,44 +29,92 @@
   <header id="inicio" class="hero">
     <div class="container">
       <h1>Bienvenidos a <span>FuturoUSA</span></h1>
-      <p>Apoyo para inmigrantes que quieren estudiar en EE.UU.</p>
+      <p>Tu plataforma para apoyar a inmigrantes que quieren estudiar en EE.UU.</p>
       <a href="#contacto" class="btn-primary">Contáctanos</a>
     </div>
   </header>
 
   <main class="container">
-    <section id="que-es" class="section">
-      <h2>¿Qué es FuturoUSA?</h2>
-      <p>FuturoUSA te ayuda a encontrar tutorías, requisitos, becas, préstamos y otros recursos para entrar a universidades o colleges en Estados Unidos.</p>
+    <!-- Login / Registro -->
+    <section id="login" class="section">
+      <h2>Login / Registro</h2>
+      <div class="auth-forms">
+        <form id="login-form" class="auth-form">
+          <h3>Iniciar sesión</h3>
+          <input type="email" placeholder="Correo electrónico" required />
+          <input type="password" placeholder="Contraseña" required />
+          <button type="submit" class="btn-primary">Entrar</button>
+        </form>
+        <form id="register-form" class="auth-form">
+          <h3>Registrar cuenta</h3>
+          <input type="text" placeholder="Nombre completo" required />
+          <input type="email" placeholder="Correo electrónico" required />
+          <input type="password" placeholder="Contraseña" required />
+          <button type="submit" class="btn-primary">Registrar</button>
+        </form>
+      </div>
     </section>
 
-    <section id="tutorias" class="section">
-      <h2>Tutorías personalizadas</h2>
-      <p>Muy pronto podrás recibir ayuda personalizada de tutores para entender el proceso educativo.</p>
-    </section>
-
-    <section id="becas" class="section">
-      <h2>Requisitos y becas</h2>
-      <p>Revisamos los requisitos más comunes y compartimos becas disponibles para inmigrantes y estudiantes internacionales.</p>
-    </section>
-
+    <!-- Comunidad -->
     <section id="comunidad" class="section">
-      <h2>Comunidad estudiantil</h2>
-      <p>Próximamente: una sección donde podrás dejar comentarios, hacer preguntas y compartir tu experiencia.</p>
+      <h2>Comunidad</h2>
+      <div class="comments">
+        <article class="comment">
+          <p><strong>Ana:</strong> ¿Alguien sabe cuándo abren las solicitudes para becas?</p>
+        </article>
+        <article class="comment">
+          <p><strong>Carlos:</strong> ¡Muy útil esta página, gracias!</p>
+        </article>
+      </div>
+      <form id="comment-form" class="comment-form">
+        <textarea placeholder="Escribe tu comentario aquí..." required></textarea>
+        <button type="submit" class="btn-primary">Enviar comentario</button>
+      </form>
     </section>
 
+    <!-- Búsqueda de Becas -->
+    <section id="becas" class="section">
+      <h2>Búsqueda de Becas</h2>
+      <form id="becas-form" class="search-form">
+        <input type="text" placeholder="Busca becas por palabra clave" />
+        <button type="submit" class="btn-primary">Buscar</button>
+      </form>
+      <div class="becas-results">
+        <article class="beca">
+          <h3>Beca para estudiantes internacionales</h3>
+          <p>Otorgada por Universidad XYZ. Monto: $2000 USD.</p>
+        </article>
+        <article class="beca">
+          <h3>Beca de apoyo para inmigrantes</h3>
+          <p>Disponible para residentes en EE.UU. Monto: $1500 USD.</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- Pagos -->
+    <section id="pagos" class="section">
+      <h2>Pagos</h2>
+      <form id="pagos-form" class="payment-form">
+        <label for="card-number">Número de tarjeta</label>
+        <input type="text" id="card-number" placeholder="1234 5678 9012 3456" required />
+        <label for="expiry">Fecha de expiración</label>
+        <input type="text" id="expiry" placeholder="MM/AA" required />
+        <label for="cvv">CVV</label>
+        <input type="text" id="cvv" placeholder="123" required />
+        <button type="submit" class="btn-primary">Pagar</button>
+      </form>
+    </section>
+
+    <!-- Contacto -->
     <section id="contacto" class="section">
       <h2>Contacto</h2>
       <form id="contact-form">
         <label for="name">Nombre</label>
-        <input type="text" id="name" name="name" placeholder="Tu nombre" required />
-
+        <input type="text" id="name" placeholder="Tu nombre" required />
         <label for="email">Correo electrónico</label>
-        <input type="email" id="email" name="email" placeholder="Tu correo" required />
-
+        <input type="email" id="email" placeholder="Tu correo" required />
         <label for="message">Mensaje</label>
-        <textarea id="message" name="message" rows="4" placeholder="Escribe tu mensaje" required></textarea>
-
+        <textarea id="message" rows="4" placeholder="Escribe tu mensaje" required></textarea>
         <button type="submit" class="btn-primary">Enviar</button>
       </form>
       <p id="form-message" class="form-message"></p>
