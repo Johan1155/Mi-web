@@ -5,33 +5,73 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>FuturoUSA - Ayuda para inmigrantes</title>
   <link rel="stylesheet" href="style.css" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet" />
 </head>
 <body>
 
-  <header>
-    <h1>Bienvenidos a FuturoUSA</h1>
-    <p>Apoyo para inmigrantes que quieren estudiar en EE.UU.</p>
+  <nav class="navbar">
+    <div class="container nav-container">
+      <a href="#" class="logo">FuturoUSA</a>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="#inicio">Inicio</a></li>
+        <li><a href="#que-es">¿Qué es?</a></li>
+        <li><a href="#tutorias">Tutorías</a></li>
+        <li><a href="#becas">Requisitos y Becas</a></li>
+        <li><a href="#comunidad">Comunidad</a></li>
+        <li><a href="#contacto">Contacto</a></li>
+      </ul>
+      <button class="nav-toggle" id="nav-toggle" aria-label="Abrir menú">
+        <i class="fas fa-bars"></i>
+      </button>
+    </div>
+  </nav>
+
+  <header id="inicio" class="hero">
+    <div class="container">
+      <h1>Bienvenidos a <span>FuturoUSA</span></h1>
+      <p>Apoyo para inmigrantes que quieren estudiar en EE.UU.</p>
+      <a href="#contacto" class="btn-primary">Contáctanos</a>
+    </div>
   </header>
 
-  <section>
-    <h2>¿Qué es FuturoUSA?</h2>
-    <p>FuturoUSA te ayuda a encontrar tutorías, requisitos, becas, préstamos y otros recursos para entrar a universidades o colleges en Estados Unidos.</p>
-  </section>
+  <main class="container">
+    <section id="que-es" class="section">
+      <h2>¿Qué es FuturoUSA?</h2>
+      <p>FuturoUSA te ayuda a encontrar tutorías, requisitos, becas, préstamos y otros recursos para entrar a universidades o colleges en Estados Unidos.</p>
+    </section>
 
-  <section>
-    <h2>Tutorías personalizadas</h2>
-    <p>Muy pronto podrás recibir ayuda personalizada de tutores para entender el proceso educativo.</p>
-  </section>
+    <section id="tutorias" class="section">
+      <h2>Tutorías personalizadas</h2>
+      <p>Muy pronto podrás recibir ayuda personalizada de tutores para entender el proceso educativo.</p>
+    </section>
 
-  <section>
-    <h2>Requisitos y becas</h2>
-    <p>Revisamos los requisitos más comunes y compartimos becas disponibles para inmigrantes y estudiantes internacionales.</p>
-  </section>
+    <section id="becas" class="section">
+      <h2>Requisitos y becas</h2>
+      <p>Revisamos los requisitos más comunes y compartimos becas disponibles para inmigrantes y estudiantes internacionales.</p>
+    </section>
 
-  <section>
-    <h2>Comunidad estudiantil</h2>
-    <p>Próximamente: una sección donde podrás dejar comentarios, hacer preguntas y compartir tu experiencia.</p>
-  </section>
+    <section id="comunidad" class="section">
+      <h2>Comunidad estudiantil</h2>
+      <p>Próximamente: una sección donde podrás dejar comentarios, hacer preguntas y compartir tu experiencia.</p>
+    </section>
+
+    <section id="contacto" class="section">
+      <h2>Contacto</h2>
+      <form id="contact-form">
+        <label for="name">Nombre</label>
+        <input type="text" id="name" name="name" placeholder="Tu nombre" required />
+
+        <label for="email">Correo electrónico</label>
+        <input type="email" id="email" name="email" placeholder="Tu correo" required />
+
+        <label for="message">Mensaje</label>
+        <textarea id="message" name="message" rows="4" placeholder="Escribe tu mensaje" required></textarea>
+
+        <button type="submit" class="btn-primary">Enviar</button>
+      </form>
+      <p id="form-message" class="form-message"></p>
+    </section>
+  </main>
 
   <footer>
     &copy; 2025 FuturoUSA - Todos los derechos reservados
