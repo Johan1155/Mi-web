@@ -1,16 +1,16 @@
-<!DOCTYPE html>
+<!DOCTYPE html> 
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>FuturoUSA</title>
-  <link rel="stylesheet" href="style.css">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
 </head>
 <body>
-  <nav class="navbar">
+  <nav class="navbar" role="navigation" aria-label="Menú principal">
     <div class="nav-container container">
       <div class="logo"><span>Futuro</span>USA</div>
       <ul class="nav-links" id="navLinks">
@@ -20,11 +20,11 @@
         <li><a href="#faq">FAQ</a></li>
         <li><a href="#contacto">Contacto</a></li>
       </ul>
-      <div class="nav-toggle" id="navToggle">&#9776;</div>
+      <button class="nav-toggle" id="navToggle" aria-label="Abrir menú">&#9776;</button>
     </div>
   </nav>
 
-  <header class="hero">
+  <header class="hero" role="banner">
     <div class="container hero-flex">
       <div class="hero-text">
         <h1>Impulsa tu futuro en <span class="highlight">USA</span></h1>
@@ -32,196 +32,272 @@
         <a href="#contacto" class="btn-primary hero-btn">Contáctanos</a>
       </div>
       <div class="hero-img">
-        <img src="https://images.unsplash.com/photo-1513258496099-48168024aec0?auto=format&fit=crop&w=600&q=80" alt="Estudiantes felices" loading="lazy">
+        <img
+          src="https://images.unsplash.com/photo-1513258496099-48168024aec0?auto=format&fit=crop&w=600&q=80"
+          alt="Estudiantes felices"
+          loading="lazy"
+        />
       </div>
     </div>
     <div class="hero-wave">
-      <svg viewBox="0 0 1440 100"><path fill="#101014" fill-opacity="1" d="M0,64L1440,0L1440,320L0,320Z"></path></svg>
+      <svg viewBox="0 0 1440 100">
+        <path fill="#101014" fill-opacity="1" d="M0,64L1440,0L1440,320L0,320Z"></path>
+      </svg>
     </div>
   </header>
 
-  <section id="servicios" class="section">
-    <div class="container">
-      <h2 class="section-title">Nuestros Servicios</h2>
-      <div class="cards">
-        <div class="card card-efecto">
-          <img class="card-img" src="https://images.unsplash.com/photo-1503676382389-4809596d5290?auto=format&fit=crop&w=400&q=80" alt="Asesoría académica" loading="lazy">
-          <h3>Asesoría Académica</h3>
-          <p>Te guiamos en tu proceso educativo y opciones de becas.</p>
-          <a href="#info-asesoria" class="btn-secondary">Más información</a>
-        </div>
-        <div class="card card-efecto">
-          <img class="card-img" src="https://images.unsplash.com/photo-1465101046530-73398c7f28ca?auto=format&fit=crop&w=400&q=80" alt="Red de apoyo" loading="lazy">
-          <h3>Red de Apoyo</h3>
-          <p>Conecta con otros estudiantes y comparte experiencias.</p>
-          <a href="#info-apoyo" class="btn-secondary">Más información</a>
-        </div>
-        <div class="card card-efecto">
-          <img class="card-img" src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=400&q=80" alt="Oportunidades laborales" loading="lazy">
-          <h3>Oportunidades Laborales</h3>
-          <p>Encuentra empleos y prácticas para estudiantes inmigrantes.</p>
-          <a href="#info-laboral" class="btn-secondary">Más información</a>
-        </div>
-      </div>
-    </div>
+  <!-- MENSAJE DE IDEA EN DESARROLLO -->
+  <section class="info-development" aria-live="polite" role="region" style="background: #f5f5f5; color: #333; padding: 1rem; text-align: center; font-weight: 600;">
+    <p>
+      ⚠️ <strong>FuturoUSA es una idea en desarrollo.</strong> Estamos trabajando para ofrecer una plataforma completa muy pronto. ¡Gracias por tu paciencia y apoyo!
+    </p>
   </section>
 
-  <!-- Secciones de información detallada -->
-  <section id="info-asesoria" class="section alt info-section">
-    <div class="container info-container">
-      <div class="info-img">
-        <img src="https://images.unsplash.com/photo-1517520287167-4bbf64a00d66?auto=format&fit=crop&w=500&q=80" alt="Orientación académica" loading="lazy">
+  <main>
+    <section id="servicios" class="section">
+      <div class="container">
+        <h2 class="section-title">Nuestros Servicios</h2>
+        <div class="cards">
+          <article class="card card-efecto">
+            <img
+              class="card-img"
+              src="https://images.unsplash.com/photo-1503676382389-4809596d5290?auto=format&fit=crop&w=400&q=80"
+              alt="Asesoría académica"
+              loading="lazy"
+            />
+            <h3>Asesoría Académica</h3>
+            <p>Te guiamos en tu proceso educativo y opciones de becas.</p>
+            <a href="#info-asesoria" class="btn-secondary">Más información</a>
+          </article>
+          <article class="card card-efecto">
+            <img
+              class="card-img"
+              src="https://images.unsplash.com/photo-1465101046530-73398c7f28ca?auto=format&fit=crop&w=400&q=80"
+              alt="Red de apoyo"
+              loading="lazy"
+            />
+            <h3>Red de Apoyo</h3>
+            <p>Conecta con otros estudiantes y comparte experiencias.</p>
+            <a href="#info-apoyo" class="btn-secondary">Más información</a>
+          </article>
+          <article class="card card-efecto">
+            <img
+              class="card-img"
+              src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=400&q=80"
+              alt="Oportunidades laborales"
+              loading="lazy"
+            />
+            <h3>Oportunidades Laborales</h3>
+            <p>Encuentra empleos y prácticas para estudiantes inmigrantes.</p>
+            <a href="#info-laboral" class="btn-secondary">Más información</a>
+          </article>
+        </div>
       </div>
-      <div>
-        <h2 class="section-title">Asesoría Académica</h2>
-        <p>
-          Nuestro equipo te orienta en la elección de universidades, procesos de admisión, becas y adaptación académica en Estados Unidos. Recibe acompañamiento personalizado, talleres y recursos para que logres tus metas educativas.
-        </p>
-        <ul class="info-list">
-          <li>Guía paso a paso para aplicar a universidades.</li>
-          <li>Información sobre becas y ayudas financieras.</li>
-          <li>Asesoría en trámites y requisitos migratorios.</li>
+    </section>
+
+    <!-- Secciones de información detallada -->
+    <section id="info-asesoria" class="section alt info-section">
+      <div class="container info-container">
+        <div class="info-img">
+          <img
+            src="https://images.unsplash.com/photo-1517520287167-4bbf64a00d66?auto=format&fit=crop&w=500&q=80"
+            alt="Orientación académica"
+            loading="lazy"
+          />
+        </div>
+        <div>
+          <h2 class="section-title">Asesoría Académica</h2>
+          <p>
+            Nuestro equipo te orienta en la elección de universidades, procesos de admisión, becas y adaptación académica en Estados Unidos. Recibe acompañamiento personalizado, talleres y recursos para que logres tus metas educativas.
+          </p>
+          <ul class="info-list">
+            <li>Guía paso a paso para aplicar a universidades.</li>
+            <li>Información sobre becas y ayudas financieras.</li>
+            <li>Asesoría en trámites y requisitos migratorios.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="info-apoyo" class="section info-section">
+      <div class="container info-container">
+        <div class="info-img">
+          <img
+            src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=500&q=80"
+            alt="Red de apoyo"
+            loading="lazy"
+          />
+        </div>
+        <div>
+          <h2 class="section-title">Red de Apoyo</h2>
+          <p>
+            Únete a nuestra comunidad de estudiantes inmigrantes, participa en foros, recibe mentoría y comparte tus experiencias. Aquí encontrarás apoyo emocional, académico y social para tu vida en USA.
+          </p>
+          <ul class="info-list">
+            <li>Foros y grupos de discusión.</li>
+            <li>Mentoría entre estudiantes.</li>
+            <li>Eventos y actividades de integración.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="info-laboral" class="section alt info-section">
+      <div class="container info-container">
+        <div class="info-img">
+          <img
+            src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=500&q=80"
+            alt="Oportunidades laborales"
+            loading="lazy"
+          />
+        </div>
+        <div>
+          <h2 class="section-title">Oportunidades Laborales</h2>
+          <p>
+            Accede a ofertas de empleo, prácticas profesionales y talleres de preparación laboral. Te ayudamos a mejorar tu currículum, prepararte para entrevistas y encontrar oportunidades que se adapten a tu perfil.
+          </p>
+          <ul class="info-list">
+            <li>Bolsa de trabajo exclusiva para estudiantes inmigrantes.</li>
+            <li>Talleres de CV y entrevistas.</li>
+            <li>Red de contactos profesionales.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="comunidad" class="section alt">
+      <div class="container comunidad-flex">
+        <div class="comunidad-img">
+          <img
+            src="https://images.unsplash.com/photo-1521737852567-6949f3f9f2b5?auto=format&fit=crop&w=500&q=80"
+            alt="Comunidad estudiantil"
+            loading="lazy"
+          />
+        </div>
+        <div>
+          <h2 class="section-title">Comunidad</h2>
+          <p>
+            Comparte experiencias, consejos y resuelve dudas con otros estudiantes inmigrantes.
+          </p>
+          <div class="comunidad-feed">
+            <blockquote class="fade-in">
+              "Gracias a FuturoUSA encontré mi primera beca en Estados Unidos."
+            </blockquote>
+            <blockquote class="fade-in">
+              "La comunidad es muy activa y siempre hay alguien dispuesto a ayudar."
+            </blockquote>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SLIDER DE TESTIMONIOS -->
+    <section id="testimonios" class="section">
+      <div class="container">
+        <h2 class="section-title">Testimonios</h2>
+        <div class="testimonial-slider">
+          <button class="slider-btn left" id="prevTesti" aria-label="Anterior">&#10094;</button>
+          <div class="testimonial-track" id="testimonialTrack">
+            <article class="testimonial-card">
+              <img
+                class="testimonial-img"
+                src="https://randomuser.me/api/portraits/women/44.jpg"
+                alt="Ana, México"
+                loading="lazy"
+              />
+              <p>“Me ayudaron a entender el proceso de admisión y ahora estudio en mi universidad soñada.”</p>
+              <span>- Ana, México</span>
+            </article>
+            <article class="testimonial-card">
+              <img
+                class="testimonial-img"
+                src="https://randomuser.me/api/portraits/men/32.jpg"
+                alt="Juan, Colombia"
+                loading="lazy"
+              />
+              <p>“Las oportunidades laborales que encontré aquí cambiaron mi vida.”</p>
+              <span>- Juan, Colombia</span>
+            </article>
+            <article class="testimonial-card">
+              <img
+                class="testimonial-img"
+                src="https://randomuser.me/api/portraits/women/68.jpg"
+                alt="Luisa, Venezuela"
+                loading="lazy"
+              />
+              <p>“La red de apoyo me ayudó a adaptarme y conocer amigos increíbles.”</p>
+              <span>- Luisa, Venezuela</span>
+            </article>
+            <article class="testimonial-card">
+              <img
+                class="testimonial-img"
+                src="https://randomuser.me/api/portraits/men/65.jpg"
+                alt="Carlos, Perú"
+                loading="lazy"
+              />
+              <p>“Gracias a los talleres de CV conseguí mi primer trabajo en USA.”</p>
+              <span>- Carlos, Perú</span>
+            </article>
+          </div>
+          <button class="slider-btn right" id="nextTesti" aria-label="Siguiente">&#10095;</button>
+        </div>
+        <div class="testimonial-dots" id="testimonialDots"></div>
+      </div>
+    </section>
+
+    <section id="faq" class="section alt">
+      <div class="container">
+        <h2 class="section-title">Preguntas Frecuentes</h2>
+        <ul class="faq-list">
+          <li>
+            <strong>¿Necesito tener papeles para aplicar?</strong><br />
+            Sí, pero hay opciones también para estudiantes indocumentados.
+          </li>
+          <li>
+            <strong>¿Ofrecen tutorías gratuitas?</strong><br />
+            Algunas tutorías son sin costo, otras tienen tarifa reducida.
+          </li>
+          <li>
+            <strong>¿En qué idiomas está disponible?</strong><br />
+            Español, Inglés, Portugués y más próximamente.
+          </li>
         </ul>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <section id="info-apoyo" class="section info-section">
-    <div class="container info-container">
-      <div class="info-img">
-        <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=500&q=80" alt="Red de apoyo" loading="lazy">
-      </div>
-      <div>
-        <h2 class="section-title">Red de Apoyo</h2>
-        <p>
-          Únete a nuestra comunidad de estudiantes inmigrantes, participa en foros, recibe mentoría y comparte tus experiencias. Aquí encontrarás apoyo emocional, académico y social para tu vida en USA.
-        </p>
-        <ul class="info-list">
-          <li>Foros y grupos de discusión.</li>
-          <li>Mentoría entre estudiantes.</li>
-          <li>Eventos y actividades de integración.</li>
-        </ul>
-      </div>
-    </div>
-  </section>
-
-  <section id="info-laboral" class="section alt info-section">
-    <div class="container info-container">
-      <div class="info-img">
-        <img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=500&q=80" alt="Oportunidades laborales" loading="lazy">
-      </div>
-      <div>
-        <h2 class="section-title">Oportunidades Laborales</h2>
-        <p>
-          Accede a ofertas de empleo, prácticas profesionales y talleres de preparación laboral. Te ayudamos a mejorar tu currículum, prepararte para entrevistas y encontrar oportunidades que se adapten a tu perfil.
-        </p>
-        <ul class="info-list">
-          <li>Bolsa de trabajo exclusiva para estudiantes inmigrantes.</li>
-          <li>Talleres de CV y entrevistas.</li>
-          <li>Red de contactos profesionales.</li>
-        </ul>
-      </div>
-    </div>
-  </section>
-
-  <section id="comunidad" class="section alt">
-    <div class="container comunidad-flex">
-      <div class="comunidad-img">
-        <img src="https://images.unsplash.com/photo-1521737852567-6949f3f9f2b5?auto=format&fit=crop&w=500&q=80" alt="Comunidad estudiantil" loading="lazy">
-      </div>
-      <div>
-        <h2 class="section-title">Comunidad</h2>
-        <p>Comparte experiencias, consejos y resuelve dudas con otros estudiantes inmigrantes.</p>
-        <div class="comunidad-feed">
-          <blockquote class="fade-in">"Gracias a FuturoUSA encontré mi primera beca en Estados Unidos."</blockquote>
-          <blockquote class="fade-in">"La comunidad es muy activa y siempre hay alguien dispuesto a ayudar."</blockquote>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- SLIDER DE TESTIMONIOS -->
-  <section id="testimonios" class="section">
-    <div class="container">
-      <h2 class="section-title">Testimonios</h2>
-      <div class="testimonial-slider">
-        <button class="slider-btn left" id="prevTesti" aria-label="Anterior">&#10094;</button>
-        <div class="testimonial-track" id="testimonialTrack">
-          <div class="testimonial-card">
-            <img class="testimonial-img" src="https://randomuser.me/api/portraits/women/44.jpg" alt="Ana, México" loading="lazy">
-            <p>"Me ayudaron a entender el proceso de admisión y ahora estudio en mi universidad soñada."</p>
-            <span>- Ana, México</span>
+    <section id="contacto" class="section">
+      <div class="container">
+        <h2 class="section-title">Contáctanos</h2>
+        <form class="form" id="contactForm" autocomplete="on">
+          <div class="form-group">
+            <label for="nombre">Nombre</label>
+            <input type="text" id="nombre" name="nombre" placeholder="Tu nombre" required />
           </div>
-          <div class="testimonial-card">
-            <img class="testimonial-img" src="https://randomuser.me/api/portraits/men/32.jpg" alt="Juan, Colombia" loading="lazy">
-            <p>"Las oportunidades laborales que encontré aquí cambiaron mi vida."</p>
-            <span>- Juan, Colombia</span>
+          <div class="form-group">
+            <label for="correo">Correo electrónico</label>
+            <input type="email" id="correo" name="correo" placeholder="Tu correo" required />
           </div>
-          <div class="testimonial-card">
-            <img class="testimonial-img" src="https://randomuser.me/api/portraits/women/68.jpg" alt="Luisa, Venezuela" loading="lazy">
-            <p>"La red de apoyo me ayudó a adaptarme y conocer amigos increíbles."</p>
-            <span>- Luisa, Venezuela</span>
+          <div class="form-group">
+            <label for="mensaje">Mensaje</label>
+            <textarea
+              id="mensaje"
+              name="mensaje"
+              placeholder="Escribe tu mensaje..."
+              required
+            ></textarea>
           </div>
-          <div class="testimonial-card">
-            <img class="testimonial-img" src="https://randomuser.me/api/portraits/men/65.jpg" alt="Carlos, Perú" loading="lazy">
-            <p>"Gracias a los talleres de CV conseguí mi primer trabajo en USA."</p>
-            <span>- Carlos, Perú</span>
-          </div>
-        </div>
-        <button class="slider-btn right" id="nextTesti" aria-label="Siguiente">&#10095;</button>
+          <button type="submit" class="btn-primary">Enviar mensaje</button>
+          <div id="form-mensaje" aria-live="polite" role="alert"></div>
+        </form>
       </div>
-      <div class="testimonial-dots" id="testimonialDots"></div>
-    </div>
-  </section>
+    </section>
+  </main>
 
-  <section id="faq" class="section alt">
+  <footer class="footer" role="contentinfo">
     <div class="container">
-      <h2 class="section-title">Preguntas Frecuentes</h2>
-      <ul class="faq-list">
-        <li>
-          <strong>¿Necesito tener papeles para aplicar?</strong>
-          <br>
-          Sí, pero hay opciones también para estudiantes indocumentados.
-        </li>
-        <li>
-          <strong>¿Ofrecen tutorías gratuitas?</strong>
-          <br>
-          Algunas tutorías son sin costo, otras tienen tarifa reducida.
-        </li>
-        <li>
-          <strong>¿En qué idiomas está disponible?</strong>
-          <br>
-          Español, Inglés, Portugués y más próximamente.
-        </li>
-      </ul>
-    </div>
-  </section>
-
-  <section id="contacto" class="section">
-    <div class="container">
-      <h2 class="section-title">Contáctanos</h2>
-      <form class="form" id="contactForm" autocomplete="on">
-        <div class="form-group">
-          <label for="nombre">Nombre</label>
-          <input type="text" id="nombre" name="nombre" placeholder="Tu nombre" required>
-        </div>
-        <div class="form-group">
-          <label for="correo">Correo electrónico</label>
-          <input type="email" id="correo" name="correo" placeholder="Tu correo" required>
-        </div>
-        <div class="form-group">
-          <label for="mensaje">Mensaje</label>
-          <textarea id="mensaje" name="mensaje" placeholder="Escribe tu mensaje..." required></textarea>
-        </div>
-        <button type="submit" class="btn-primary">Enviar mensaje</button>
-        <div id="form-mensaje" aria-live="polite"></div>
-      </form>
-    </div>
-  </section>
-
-  <footer class="footer">
-    <div class="container">
-      <p>&copy; 2025 <span class="highlight">FuturoUSA</span>. Todos los derechos reservados.</p>
+      <p>
+        &copy; 2025 <span class="highlight">FuturoUSA</span>. Todos los derechos reservados.
+      </p>
     </div>
   </footer>
 

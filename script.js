@@ -11,7 +11,10 @@ document.querySelectorAll('.nav-links a').forEach(link => {
   link.addEventListener('click', function(e) {
     if (this.hash) {
       e.preventDefault();
-      document.querySelector(this.hash).scrollIntoView({ behavior: 'smooth' });
+      const target = document.querySelector(this.hash);
+      if (target) {  // Mejor evitar error si el ID no existe
+        target.scrollIntoView({ behavior: 'smooth' });
+      }
       navLinks.classList.remove('open');
     }
   });
@@ -31,7 +34,7 @@ document.getElementById('contactForm').addEventListener('submit', function(e) {
   e.preventDefault();
   const mensaje = document.getElementById('form-mensaje');
   mensaje.textContent = '¡Gracias por contactarnos! Te responderemos pronto.';
-  mensaje.style.color = '#ef4444';
+  mensaje.style.color = '#ef4444';  // Color rojo, si quieres otro avísame
   this.reset();
   setTimeout(() => {
     mensaje.textContent = '';
