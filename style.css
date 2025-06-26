@@ -4,7 +4,7 @@ body {
   margin: 0;
   padding: 0;
   background-color: #f7f9fb;
-  color: #333;
+  color: #222;
   scroll-behavior: smooth;
 }
 
@@ -21,13 +21,19 @@ a {
 
 /* Navbar */
 .navbar {
-  background-color: #1e3a8a;
+  background: linear-gradient(90deg, #1e3a8a 70%, #ef4444 100%);
   color: white;
   padding: 15px 0;
   position: sticky;
   top: 0;
   z-index: 999;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  animation: slideDown 0.7s;
+}
+
+@keyframes slideDown {
+  from { transform: translateY(-60px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
 }
 
 .nav-container {
@@ -37,8 +43,9 @@ a {
 }
 
 .logo {
-  font-size: 1.5rem;
+  font-size: 1.7rem;
   font-weight: bold;
+  letter-spacing: 1px;
 }
 
 .logo span {
@@ -48,53 +55,87 @@ a {
 .nav-links {
   list-style: none;
   display: flex;
-  gap: 20px;
+  gap: 28px;
 }
 
 .nav-links li a {
-  font-weight: 500;
+  font-weight: 600;
   transition: color 0.3s;
+  padding: 6px 10px;
+  border-radius: 6px;
 }
 
-.nav-links li a:hover {
+.nav-links li a:hover,
+.nav-links li a.active {
   color: #ef4444;
+  background: #fff;
+  transition: 0.3s;
 }
 
 .nav-toggle {
   display: none;
+  font-size: 2rem;
+  cursor: pointer;
 }
 
 /* Hero */
 .hero {
-  background: linear-gradient(to right, #1e3a8a, #3b82f6);
+  background: linear-gradient(120deg, #1e3a8a 60%, #ef4444 100%);
   color: white;
-  padding: 100px 20px;
+  padding: 100px 20px 80px 20px;
   text-align: center;
+  position: relative;
+  overflow: hidden;
 }
 
 .hero h1 {
-  font-size: 2.5rem;
+  font-size: 2.8rem;
   margin-bottom: 20px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  animation: fadeInUp 1s;
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(40px);}
+  to { opacity: 1; transform: translateY(0);}
+}
+
+.hero .highlight {
+  color: #ef4444;
 }
 
 .hero p {
   font-size: 1.2rem;
-  margin-bottom: 30px;
+  margin-bottom: 35px;
+  animation: fadeInUp 1.2s;
 }
 
+.hero-btn {
+  font-size: 1.1rem;
+  padding: 14px 32px;
+  box-shadow: 0 4px 16px rgba(30,58,138,0.15);
+  animation: fadeInUp 1.4s;
+}
+
+/* Botón principal */
 .btn-primary {
-  background-color: #ef4444;
-  color: white;
+  background: linear-gradient(90deg, #ef4444 60%, #1e3a8a 100%);
+  color: #fff;
   border: none;
-  padding: 12px 24px;
+  padding: 12px 28px;
   border-radius: 25px;
   font-size: 1rem;
+  font-weight: 600;
   cursor: pointer;
-  transition: background-color 0.3s;
+  transition: background 0.3s, transform 0.2s, box-shadow 0.2s;
+  box-shadow: 0 2px 8px rgba(239,68,68,0.08);
 }
 
 .btn-primary:hover {
-  background-color: #dc2626;
+  background: linear-gradient(90deg, #1e3a8a 60%, #ef4444 100%);
+  transform: translateY(-2px) scale(1.04);
+  box-shadow: 0 4px 16px rgba(30,58,138,0.15);
 }
 
 /* Secciones */
@@ -111,81 +152,229 @@ a {
   font-size: 2rem;
   margin-bottom: 40px;
   color: #1e3a8a;
+  font-weight: 700;
+  letter-spacing: 1px;
+  position: relative;
 }
 
+.section-title::after {
+  content: "";
+  display: block;
+  margin: 12px auto 0 auto;
+  width: 60px;
+  height: 4px;
+  border-radius: 2px;
+  background: linear-gradient(90deg, #ef4444 60%, #1e3a8a 100%);
+  opacity: 0.7;
+}
+
+/* Tarjetas */
 .cards {
   display: flex;
   flex-wrap: wrap;
-  gap: 20px;
+  gap: 24px;
   justify-content: center;
 }
 
 .card {
   background: white;
-  border-radius: 12px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
-  padding: 25px;
+  border-radius: 14px;
+  box-shadow: 0 2px 12px rgba(30,58,138,0.07);
+  padding: 28px 22px;
   text-align: center;
   flex: 1 1 280px;
+  min-width: 260px;
+  max-width: 340px;
   transition: transform 0.3s, box-shadow 0.3s;
+  border: 1.5px solid #e5e7eb;
+  position: relative;
+  overflow: hidden;
 }
 
-.card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+.card-efecto:hover {
+  transform: translateY(-8px) scale(1.03);
+  box-shadow: 0 8px 32px rgba(239,68,68,0.13);
+  border-color: #ef4444;
 }
 
 .card i {
-  font-size: 2rem;
+  font-size: 2.2rem;
+  color: #1e3a8a;
+  margin-bottom: 18px;
+  transition: color 0.3s;
+}
+
+.card-efecto:hover i {
   color: #ef4444;
-  margin-bottom: 15px;
 }
 
 .card h3 {
   margin-bottom: 10px;
   color: #1e3a8a;
+  font-weight: 600;
 }
 
 .card p {
-  font-size: 0.95rem;
-  color: #555;
+  font-size: 1rem;
+  color: #444;
 }
 
+.card span {
+  display: block;
+  margin-top: 18px;
+  color: #ef4444;
+  font-weight: 600;
+}
+
+/* Comunidad */
 .comunidad-feed blockquote {
   background: #fff;
-  padding: 20px;
-  border-left: 4px solid #ef4444;
-  margin: 10px 0;
+  padding: 22px 28px;
+  border-left: 5px solid #ef4444;
+  margin: 18px 0;
   font-style: italic;
-  border-radius: 6px;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(30,58,138,0.07);
+  color: #222;
+  opacity: 0.93;
+  animation: fadeIn 1.2s;
 }
 
+@keyframes fadeIn {
+  from { opacity: 0;}
+  to { opacity: 0.93;}
+}
+
+/* FAQ */
 .faq-list {
   list-style: none;
   padding: 0;
 }
 
 .faq-list li {
-  margin-bottom: 20px;
-  line-height: 1.6;
+  margin-bottom: 22px;
+  line-height: 1.7;
+  background: #fff;
+  border-left: 4px solid #1e3a8a;
+  padding: 18px 18px 18px 22px;
+  border-radius: 7px;
+  box-shadow: 0 2px 8px rgba(30,58,138,0.06);
+  transition: border-color 0.3s;
+}
+
+.faq-list li:hover {
+  border-left: 4px solid #ef4444;
+}
+
+/* Formulario */
+.form {
+  max-width: 420px;
+  margin: 0 auto;
+  background: #fff;
+  padding: 32px 28px 24px 28px;
+  border-radius: 14px;
+  box-shadow: 0 2px 12px rgba(30,58,138,0.08);
+  animation: fadeInUp 1.2s;
+}
+
+.form-group {
+  margin-bottom: 18px;
+}
+
+.form label {
+  display: block;
+  margin-bottom: 7px;
+  color: #1e3a8a;
+  font-weight: 600;
+  font-size: 1rem;
 }
 
 .form input,
 .form textarea {
   width: 100%;
   padding: 12px;
-  margin-bottom: 15px;
-  border: 1px solid #ccc;
+  margin-bottom: 0;
+  border: 1.5px solid #ccc;
   border-radius: 8px;
   font-family: inherit;
+  font-size: 1rem;
+  transition: border-color 0.3s, box-shadow 0.3s;
+  background: #f7f9fb;
+  resize: none;
 }
 
+.form input:focus,
+.form textarea:focus {
+  border-color: #ef4444;
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(239,68,68,0.13);
+}
+
+.form textarea {
+  min-height: 90px;
+  max-height: 200px;
+}
+
+#form-mensaje {
+  margin-top: 12px;
+  color: #1e3a8a;
+  font-weight: 600;
+  text-align: center;
+  min-height: 24px;
+  transition: color 0.3s;
+}
+
+/* Footer */
 .footer {
-  background-color: #1e3a8a;
+  background: linear-gradient(90deg, #1e3a8a 70%, #ef4444 100%);
   color: white;
   text-align: center;
-  padding: 20px 0;
-  margin-top: 40px;
-  font-size: 0.9rem;
+  padding: 22px 0;
+  margin-top: 48px;
+  font-size: 1rem;
+  letter-spacing: 1px;
+}
+
+.footer .highlight {
+  color: #ef4444;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .cards {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+@media (max-width: 700px) {
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    background: #1e3a8a;
+    position: absolute;
+    top: 60px;
+    right: 0;
+    width: 180px;
+    box-shadow: 0 2px 8px rgba(30,58,138,0.13);
+    border-radius: 0 0 0 12px;
+    z-index: 1000;
+    padding: 18px 0;
+  }
+  .nav-links.open {
+    display: flex;
+  }
+  .nav-toggle {
+    display: block;
+    color: #fff;
+  }
+  .hero h1 {
+    font-size: 2rem;
+  }
+  .section-title {
+    font-size: 1.3rem;
+  }
+  .form {
+    padding: 18px 10px;
+  }
 }

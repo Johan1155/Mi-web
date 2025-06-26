@@ -1,31 +1,39 @@
-// Toggle menú para móviles
-const toggle = document.getElementById("nav-toggle");
-const navLinks = document.getElementById("nav-links");
+// Menú responsive
+const navToggle = document.getElementById('navToggle');
+const navLinks = document.getElementById('navLinks');
 
-toggle.addEventListener("click", () => {
-  navLinks.classList.toggle("active");
+navToggle.addEventListener('click', () => {
+  navLinks.classList.toggle('open');
 });
 
-// Scroll animado (solo decorativo)
-const links = document.querySelectorAll(".nav-links a");
+// Scroll suave para los enlaces del menú
+document.querySelectorAll('.nav-links a').forEach(link => {
+  link.addEventListener('click', function(e) {
+    if (this.hash) {
+      e.preventDefault();
+      document.querySelector(this.hash).scrollIntoView({ behavior: 'smooth' });
+      navLinks.classList.remove('open');
+    }
+  });
+});
 
-for (const link of links) {
-  link.addEventListener("click", smoothScroll);
-}
+// Animación de aparición para los bloques de comunidad
+document.querySelectorAll('.comunidad-feed blockquote').forEach((el, i) => {
+  el.style.opacity = 0;
+  setTimeout(() => {
+    el.style.opacity = 0.93;
+    el.style.transition = 'opacity 1s';
+  }, 600 + i * 600);
+});
 
-function smoothScroll(e) {
+// Formulario de contacto con mensaje de éxito
+document.getElementById('contactForm').addEventListener('submit', function(e) {
   e.preventDefault();
-  const targetId = this.getAttribute("href").slice(1);
-  const target = document.getElementById(targetId);
-  if (target) {
-    target.scrollIntoView({ behavior: "smooth" });
-  }
-}
-
-// Mensaje al enviar formulario
-const form = document.querySelector(".form");
-form.addEventListener("submit", (e) => {
-  e.preventDefault();
-  alert("¡Gracias por tu mensaje! Nos pondremos en contacto pronto.");
-  form.reset();
+  const mensaje = document.getElementById('form-mensaje');
+  mensaje.textContent = '¡Gracias por contactarnos! Te responderemos pronto.';
+  mensaje.style.color = '#ef4444';
+  this.reset();
+  setTimeout(() => {
+    mensaje.textContent = '';
+  }, 4000);
 });

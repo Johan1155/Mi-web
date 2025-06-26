@@ -1,37 +1,34 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>FuturoUSA - Plataforma para Inmigrantes</title>
-  <link rel="stylesheet" href="style.css" />
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet" />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FuturoUSA</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-
   <nav class="navbar">
-    <div class="container nav-container">
-      <a href="#" class="logo">Futuro<span>USA</span></a>
-      <ul class="nav-links" id="nav-links">
-        <li><a href="#inicio">Inicio</a></li>
+    <div class="nav-container container">
+      <div class="logo"><span>Futuro</span>USA</div>
+      <ul class="nav-links" id="navLinks">
         <li><a href="#servicios">Servicios</a></li>
         <li><a href="#comunidad">Comunidad</a></li>
         <li><a href="#testimonios">Testimonios</a></li>
         <li><a href="#faq">FAQ</a></li>
         <li><a href="#contacto">Contacto</a></li>
       </ul>
-      <button class="nav-toggle" id="nav-toggle" aria-label="Abrir menú">
-        <i class="fas fa-bars"></i>
-      </button>
+      <div class="nav-toggle" id="navToggle">&#9776;</div>
     </div>
   </nav>
 
-  <header id="inicio" class="hero">
+  <header class="hero">
     <div class="container">
-      <h1><span>FuturoUSA</span>: Tu futuro en Estados Unidos comienza hoy</h1>
-      <p>Recibe guía, apoyo y comunidad para ingresar a una universidad siendo inmigrante.</p>
-      <a href="#contacto" class="btn-primary">Empieza ahora</a>
+      <h1>Impulsa tu futuro en <span class="highlight">USA</span></h1>
+      <p>Recursos, comunidad y apoyo para estudiantes inmigrantes.</p>
+      <a href="#contacto" class="btn-primary hero-btn">Contáctanos</a>
     </div>
   </header>
 
@@ -39,20 +36,20 @@
     <div class="container">
       <h2 class="section-title">Nuestros Servicios</h2>
       <div class="cards">
-        <div class="card">
-          <i class="fas fa-graduation-cap"></i>
-          <h3>Tutorías</h3>
-          <p>Asesoría personalizada para ayudarte con inscripciones, exámenes y procesos de admisión.</p>
+        <div class="card card-efecto">
+          <i class="fa-solid fa-graduation-cap"></i>
+          <h3>Asesoría Académica</h3>
+          <p>Te guiamos en tu proceso educativo y opciones de becas.</p>
         </div>
-        <div class="card">
-          <i class="fas fa-file-alt"></i>
-          <h3>Requisitos</h3>
-          <p>Todo lo que necesitas saber sobre documentación, visas y formularios.</p>
+        <div class="card card-efecto">
+          <i class="fa-solid fa-users"></i>
+          <h3>Red de Apoyo</h3>
+          <p>Conecta con otros estudiantes y comparte experiencias.</p>
         </div>
-        <div class="card">
-          <i class="fas fa-hand-holding-usd"></i>
-          <h3>Becas y Préstamos</h3>
-          <p>Acceso a información sobre ayuda financiera, becas y opciones de crédito estudiantil.</p>
+        <div class="card card-efecto">
+          <i class="fa-solid fa-briefcase"></i>
+          <h3>Oportunidades Laborales</h3>
+          <p>Encuentra empleos y prácticas para estudiantes inmigrantes.</p>
         </div>
       </div>
     </div>
@@ -63,8 +60,8 @@
       <h2 class="section-title">Comunidad</h2>
       <p>Comparte experiencias, consejos y resuelve dudas con otros estudiantes inmigrantes.</p>
       <div class="comunidad-feed">
-        <blockquote>“Gracias a FuturoUSA encontré la beca perfecta para mí. – <strong>María</strong>”</blockquote>
-        <blockquote>“La sección de requisitos me ayudó a no cometer errores. – <strong>Andrés</strong>”</blockquote>
+        <blockquote class="fade-in">"Gracias a FuturoUSA encontré mi primera beca en Estados Unidos."</blockquote>
+        <blockquote class="fade-in">"La comunidad es muy activa y siempre hay alguien dispuesto a ayudar."</blockquote>
       </div>
     </div>
   </section>
@@ -73,12 +70,12 @@
     <div class="container">
       <h2 class="section-title">Testimonios</h2>
       <div class="cards">
-        <div class="card">
-          <p>“Nunca imaginé que el proceso de admisión pudiera ser tan sencillo con buena ayuda.”</p>
-          <span>- Laura, Venezuela</span>
+        <div class="card card-efecto">
+          <p>"Me ayudaron a entender el proceso de admisión y ahora estudio en mi universidad soñada."</p>
+          <span>- Ana, México</span>
         </div>
-        <div class="card">
-          <p>“Me acompañaron en cada paso y hoy estudio en Texas gracias a FuturoUSA.”</p>
+        <div class="card card-efecto">
+          <p>"Las oportunidades laborales que encontré aquí cambiaron mi vida."</p>
           <span>- Juan, Colombia</span>
         </div>
       </div>
@@ -89,9 +86,21 @@
     <div class="container">
       <h2 class="section-title">Preguntas Frecuentes</h2>
       <ul class="faq-list">
-        <li><strong>¿Necesito tener papeles para aplicar?</strong><br>Sí, pero hay opciones también para estudiantes indocumentados.</li>
-        <li><strong>¿Ofrecen tutorías gratuitas?</strong><br>Algunas tutorías son sin costo, otras tienen tarifa reducida.</li>
-        <li><strong>¿En qué idiomas está disponible?</strong><br>Español, Inglés, Portugués y más próximamente.</li>
+        <li>
+          <strong>¿Necesito tener papeles para aplicar?</strong>
+          <br>
+          Sí, pero hay opciones también para estudiantes indocumentados.
+        </li>
+        <li>
+          <strong>¿Ofrecen tutorías gratuitas?</strong>
+          <br>
+          Algunas tutorías son sin costo, otras tienen tarifa reducida.
+        </li>
+        <li>
+          <strong>¿En qué idiomas está disponible?</strong>
+          <br>
+          Español, Inglés, Portugués y más próximamente.
+        </li>
       </ul>
     </div>
   </section>
@@ -99,22 +108,32 @@
   <section id="contacto" class="section">
     <div class="container">
       <h2 class="section-title">Contáctanos</h2>
-      <form class="form">
-        <input type="text" placeholder="Tu nombre" required>
-        <input type="email" placeholder="Tu correo" required>
-        <textarea placeholder="Escribe tu mensaje..." required></textarea>
+      <form class="form" id="contactForm" autocomplete="on">
+        <div class="form-group">
+          <label for="nombre">Nombre</label>
+          <input type="text" id="nombre" name="nombre" placeholder="Tu nombre" required>
+        </div>
+        <div class="form-group">
+          <label for="correo">Correo electrónico</label>
+          <input type="email" id="correo" name="correo" placeholder="Tu correo" required>
+        </div>
+        <div class="form-group">
+          <label for="mensaje">Mensaje</label>
+          <textarea id="mensaje" name="mensaje" placeholder="Escribe tu mensaje..." required></textarea>
+        </div>
         <button type="submit" class="btn-primary">Enviar mensaje</button>
+        <div id="form-mensaje" aria-live="polite"></div>
       </form>
     </div>
   </section>
 
   <footer class="footer">
     <div class="container">
-      <p>&copy; 2025 FuturoUSA. Todos los derechos reservados.</p>
+      <p>&copy; 2025 <span class="highlight">FuturoUSA</span>. Todos los derechos reservados.</p>
     </div>
   </footer>
 
+  <script src="https://kit.fontawesome.com/8d0e2e7e2e.js" crossorigin="anonymous"></script>
   <script src="script.js"></script>
 </body>
 </html>
-
