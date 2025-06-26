@@ -35,6 +35,9 @@
         <img src="https://images.unsplash.com/photo-1513258496099-48168024aec0?auto=format&fit=crop&w=600&q=80" alt="Estudiantes felices" loading="lazy">
       </div>
     </div>
+    <div class="hero-wave">
+      <svg viewBox="0 0 1440 100"><path fill="#101014" fill-opacity="1" d="M0,64L1440,0L1440,320L0,320Z"></path></svg>
+    </div>
   </header>
 
   <section id="servicios" class="section">
@@ -105,7 +108,7 @@
   <section id="info-laboral" class="section alt info-section">
     <div class="container info-container">
       <div class="info-img">
-        <img src="https://images.unsplash.com/photo-1464983953574-0892a716854b?auto=format&fit=crop&w=500&q=80" alt="Oportunidades laborales" loading="lazy">
+        <img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=500&q=80" alt="Oportunidades laborales" loading="lazy">
       </div>
       <div>
         <h2 class="section-title">Oportunidades Laborales</h2>
@@ -137,21 +140,37 @@
     </div>
   </section>
 
+  <!-- SLIDER DE TESTIMONIOS -->
   <section id="testimonios" class="section">
     <div class="container">
       <h2 class="section-title">Testimonios</h2>
-      <div class="cards">
-        <div class="card card-efecto">
-          <img class="testimonial-img" src="https://randomuser.me/api/portraits/women/44.jpg" alt="Ana, México" loading="lazy">
-          <p>"Me ayudaron a entender el proceso de admisión y ahora estudio en mi universidad soñada."</p>
-          <span>- Ana, México</span>
+      <div class="testimonial-slider">
+        <button class="slider-btn left" id="prevTesti" aria-label="Anterior">&#10094;</button>
+        <div class="testimonial-track" id="testimonialTrack">
+          <div class="testimonial-card">
+            <img class="testimonial-img" src="https://randomuser.me/api/portraits/women/44.jpg" alt="Ana, México" loading="lazy">
+            <p>"Me ayudaron a entender el proceso de admisión y ahora estudio en mi universidad soñada."</p>
+            <span>- Ana, México</span>
+          </div>
+          <div class="testimonial-card">
+            <img class="testimonial-img" src="https://randomuser.me/api/portraits/men/32.jpg" alt="Juan, Colombia" loading="lazy">
+            <p>"Las oportunidades laborales que encontré aquí cambiaron mi vida."</p>
+            <span>- Juan, Colombia</span>
+          </div>
+          <div class="testimonial-card">
+            <img class="testimonial-img" src="https://randomuser.me/api/portraits/women/68.jpg" alt="Luisa, Venezuela" loading="lazy">
+            <p>"La red de apoyo me ayudó a adaptarme y conocer amigos increíbles."</p>
+            <span>- Luisa, Venezuela</span>
+          </div>
+          <div class="testimonial-card">
+            <img class="testimonial-img" src="https://randomuser.me/api/portraits/men/65.jpg" alt="Carlos, Perú" loading="lazy">
+            <p>"Gracias a los talleres de CV conseguí mi primer trabajo en USA."</p>
+            <span>- Carlos, Perú</span>
+          </div>
         </div>
-        <div class="card card-efecto">
-          <img class="testimonial-img" src="https://randomuser.me/api/portraits/men/32.jpg" alt="Juan, Colombia" loading="lazy">
-          <p>"Las oportunidades laborales que encontré aquí cambiaron mi vida."</p>
-          <span>- Juan, Colombia</span>
-        </div>
+        <button class="slider-btn right" id="nextTesti" aria-label="Siguiente">&#10095;</button>
       </div>
+      <div class="testimonial-dots" id="testimonialDots"></div>
     </div>
   </section>
 
