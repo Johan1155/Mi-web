@@ -82,3 +82,28 @@ input.addEventListener('input', () => {
     result.textContent = `${matches} resultado(s) para "${query}"`;
   }
 });
+const btnBuscar = document.getElementById('btnBuscar');
+const inputBusqueda = document.getElementById('busqueda');
+const resultadosDiv = document.getElementById('resultados');
+
+btnBuscar.addEventListener('click', () => {
+  const query = inputBusqueda.value.trim();
+  if (!query) {
+    resultadosDiv.textContent = 'Por favor escribe algo para buscar.';
+    return;
+  }
+
+  fetch(`http://localhost:3000/api/buscar?q=${encodeURIComponent(query)}`)
+    .then(res => res.json())
+    .then(data => {
+      // Aquí muestras los resultados en la página
+      if (data.length === 0) {
+        resultadosDiv.textContent = 'No se encontraron resultados.';
+      } else {
+        resultadosDiv.innerHTML = data.map(item => `<p>${item}</p>`).join('');
+      }
+    })
+    .catch(() => {
+      resultadosDiv.textContent = 'Error al conectar con el servidor.';
+    });
+});
