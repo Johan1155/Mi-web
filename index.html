@@ -11,25 +11,31 @@
 </head>
 <body>
   <nav class="navbar" role="navigation" aria-label="Menú principal">
-   <div class="nav-container">
-  <div class="logo">Futuro<span>USA</span></div>
-  
-  <ul class="nav-links" id="navLinks">
-    <li><a href="#inicio" class="active">Inicio</a></li>
-    <li><a href="#info">Info</a></li>
-    <li><a href="#comunidad">Comunidad</a></li>
-    <li><a href="#contacto">Contacto</a></li>
-  </ul>
+    <div class="nav-container container">
+      <div class="logo">Futuro<span>USA</span></div>
 
-  <!-- Caja de búsqueda -->
-  <div class="search-container">
-    <input type="text" id="busquedaInput" placeholder="Buscar..." />
-    <button onclick="buscar()">🔍</button>
-  </div>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#inicio" class="active">Inicio</a></li>
+        <li><a href="#info">Info</a></li>
+        <li><a href="#comunidad">Comunidad</a></li>
+        <li><a href="#contacto">Contacto</a></li>
+      </ul>
 
-  <div class="nav-toggle" id="navToggle">☰</div>
-</div>
+      <!-- Aquí está la barra de búsqueda en el navbar, arriba a la derecha -->
+      <div class="search-container" style="display:flex; align-items:center; gap:8px;">
+        <input
+          type="text"
+          id="busqueda"
+          placeholder="Buscar..."
+          class="input-busqueda"
+          aria-label="Buscar en FuturoUSA"
+          style="padding: 8px 12px; border-radius: 20px; border: 1.5px solid #ef4444; font-size: 1rem; background: #101014; color: white;"
+        />
+        <button class="btn-primary" id="btnBuscar" aria-label="Botón buscar">Buscar</button>
+      </div>
 
+      <div class="nav-toggle" id="navToggle">☰</div>
+    </div>
   </nav>
 
   <header class="hero" role="banner">
@@ -61,18 +67,15 @@
   </section>
 
   <main>
-    <!-- Caja de búsqueda inteligente -->
-    <section id="busqueda-inteligente" style="text-align:center; margin: 20px 0;">
-      <input 
-        type="text" 
-        id="searchInput" 
-        placeholder="Busca palabras clave..." 
-        style="width: 80%; max-width: 400px; padding: 10px; font-size: 1rem; border-radius: 8px; border: 1.5px solid #ef4444; background: #101014; color: #fff;" 
-        aria-label="Buscar testimonios"
-      />
-      <p id="searchResult" style="color: #ef4444; margin-top: 10px;" aria-live="polite"></p>
+    <!-- Aquí agregamos la sección de resultados de búsqueda -->
+    <section class="section" id="resultados" style="margin: 30px auto; max-width: 900px;">
+      <div class="container">
+        <h2 class="section-title">Resultados de búsqueda</h2>
+        <ul id="lista-resultados" class="cards" style="list-style:none; padding:0;"></ul>
+      </div>
     </section>
 
+    <!-- El resto de tu contenido sigue igual -->
     <section id="servicios" class="section">
       <div class="container">
         <h2 class="section-title">Nuestros Servicios</h2>
@@ -114,7 +117,6 @@
       </div>
     </section>
 
-    <!-- Secciones de información detallada -->
     <section id="info-asesoria" class="section alt info-section">
       <div class="container info-container">
         <div class="info-img">

@@ -602,3 +602,73 @@ a:focus {
 .search-container button:hover {
   background: #dc2626;
 }
+/* Estilos para la barra de búsqueda en el navbar */
+.input-busqueda {
+  padding: 8px 12px;
+  border-radius: 20px;
+  border: 1.5px solid #ef4444;
+  font-size: 1rem;
+  background: #101014;
+  color: white;
+  transition: all 0.3s ease;
+  width: 200px;
+}
+
+.input-busqueda:focus {
+  outline: none;
+  border-color: #1e3a8a;
+  box-shadow: 0 0 6px 2px rgba(30, 58, 138, 0.4);
+}
+
+/* Botón Buscar estilo */
+#btnBuscar {
+  background-color: #ef4444;
+  color: white;
+  border: none;
+  padding: 8px 18px;
+  border-radius: 20px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background-color 0.3s ease;
+}
+
+#btnBuscar:hover {
+  background-color: #dc2626;
+}
+
+/* Estilos para la sección de resultados */
+#resultados {
+  background: #1a1a1a;
+  padding: 20px 15px;
+  border-radius: 10px;
+  color: white;
+  margin-top: 40px;
+}
+
+/* Lista de resultados como tarjetas */
+#lista-resultados {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  padding: 0;
+  list-style: none;
+}
+
+#lista-resultados li.card {
+  background: #222;
+  border-radius: 8px;
+  padding: 15px 20px;
+  width: calc(33.333% - 10px);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.6);
+  transition: transform 0.2s ease;
+}
+
+#lista-resultados li.card:hover {
+  transform: translateY(-5px);
+}
+
+#lista-resultados li.card h3 {
+  margin-top: 0;
+  margin-bottom: 8px;
+  color: #ef4444;
+}

@@ -120,3 +120,39 @@ function buscar() {
       alert('Error al conectar con el servidor.');
     });
 }
+// Función para buscar al hacer clic o presionar Enter
+async function buscar() {
+  const consulta = document.getElementById('busqueda').value.trim();
+  if (!consulta) return;
+
+  const res = await fetch(`http://localhost:3000/buscar?q=${encodeURIComponent(consulta)}`);
+  const data = await res.json();
+
+  const lista = document.getElementById('lista-resultados');
+  lista.innerHTML = '';
+
+  if (data.resultados.length === 0) {
+    lista.innerHTML = '<p>No se encontraron resultados.</p>';
+  } else {
+    data.resultados.forEach(item => {
+      const li = document.createElement('li');
+      li.className = 'card card-efecto';
+      li.innerHTML = `<h3>${item}</h3><p>Información relacionada con: <strong>${consulta}</strong></p>`;
+      lista.appendChild(li);
+    });
+  }
+
+  // Scroll suave hacia la sección resultados
+  document.getElementById('resultados').scrollIntoView({ behavior: 'smooth' });
+}
+
+// Evento botón buscar
+document.getElementById('btnBuscar').addEventListener('click', buscar);
+
+// Evento tecla Enter en input búsqueda
+document.getElementById('busqueda').addEventListener('keydown', (e) => {
+  if (e.key === 'Enter') {
+    e.preventDefault(); // evita que se envíe formulario o recargue la página
+    buscar();
+  }
+});
