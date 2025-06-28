@@ -3,14 +3,24 @@ const cors = require('cors');
 const admin = require('firebase-admin'); // Importa la librería de Firebase Admin
 
 // --- CONFIGURACIÓN DE FIREBASE ---
-// IMPORTANTE: Asegúrate que 'serviceAccountKey.json' esté en la misma carpeta que index.js
-// Y que su nombre coincida exactamente con el archivo que descargaste en el Paso 3.
+// IMPORTANTE: Asegúrate de que 'serviceAccountKey.json' esté en la misma carpeta que index.js
+// y que su nombre coincida exactamente con el archivo que descargaste.
 const serviceAccount = require('./serviceAccountKey.json'); 
 
 // Inicializa Firebase Admin SDK con tus credenciales
-admin.initializeApp({
-  credential: admin.credential.cert(serviceAccount)
-});
+// Esta es la parte que necesita el archivo serviceAccountKey.json para funcionar.
+try {
+  admin.initializeApp({
+    credential: admin.credential.cert(serviceAccount)
+  });
+  console.log('Firebase Admin SDK inicializado correctamente.');
+} catch (error) {
+  console.error('Error al inicializar Firebase Admin SDK:', error.message);
+  console.error('Asegúrate de que serviceAccountKey.json esté en la carpeta correcta y sea válido.');
+  // Puedes decidir salir del proceso si la inicialización es crítica
+  // process.exit(1); 
+}
+
 
 const db = admin.firestore(); // Obtiene una referencia a tu base de datos Firestore
 
@@ -28,7 +38,7 @@ app.use(express.json());
 
 // Ruta principal: Para verificar que el servidor está corriendo
 app.get('/', (req, res) => {
-  res.send('¡Backend de FuturoUSA funcionando y conectado a Firestore!');
+  res.send('¡Backend de FuturoUSA funcionando y (esperamos) conectado a Firestore!');
 });
 
 // Ruta de búsqueda: Ahora busca datos en Firestore
@@ -40,20 +50,20 @@ app.get('/buscar', async (req, res) => {
 
   try {
     // Accede a la colección 'recursos' en tu base de datos Firestore
-    // NOTA: Esto trae TODOS los documentos de la colección 'recursos'.
-    // Para búsquedas grandes, necesitarías filtros más específicos o soluciones de búsqueda de texto completo.
+    // Esto traerá TODOS los documentos de la colección 'recursos' por ahora.
+    // Para búsquedas grandes, se necesitarían filtros o soluciones de búsqueda de texto completo.
     const snapshot = await db.collection('recursos').get();
 
     // Itera sobre cada documento encontrado
     snapshot.forEach(doc => {
       const data = doc.data(); // Obtiene los datos del documento
-
+      
       // Comprueba si la consulta está en el título o descripción del recurso
-      // Puedes añadir más campos si quieres que la búsqueda sea más amplia
+      // Puedes añadir más campos si quieres que la búsqueda sea más amplia (ej. data.tags)
       if (data.titulo && data.titulo.toLowerCase().includes(q)) {
         resultados.push(data.titulo); // Añade el título del recurso a los resultados
       } else if (data.descripcion && data.descripcion.toLowerCase().includes(q)) {
-        resultados.push(data.descripcion); // Podrías añadir la descripción o ambos
+        resultados.push(data.titulo); // Preferiblemente devuelve el título para la tarjeta de resultado
       }
     });
 
@@ -98,5 +108,7 @@ app.post('/contacto', async (req, res) => {
 // Iniciar el servidor
 app.listen(PORT, () => {
   console.log(`Servidor backend corriendo en http://localhost:${PORT}`);
-  console.log('¡Conectado a Firestore! Puedes empezar a añadir datos.');
+  console.log('¡Intento de conexión a Firestore finalizado!');
+  console.log('Si la línea anterior fue un error, la conexión falló.');
+  console.log('Si no hubo error, la conexión debería estar establecida.');
 });
