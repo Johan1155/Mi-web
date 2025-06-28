@@ -11,17 +11,25 @@
 </head>
 <body>
   <nav class="navbar" role="navigation" aria-label="Menú principal">
-    <div class="nav-container container">
-      <div class="logo"><span>Futuro</span>USA</div>
-      <ul class="nav-links" id="navLinks">
-        <li><a href="#servicios">Servicios</a></li>
-        <li><a href="#comunidad">Comunidad</a></li>
-        <li><a href="#testimonios">Testimonios</a></li>
-        <li><a href="#faq">FAQ</a></li>
-        <li><a href="#contacto">Contacto</a></li>
-      </ul>
-      <button class="nav-toggle" id="navToggle" aria-label="Abrir menú">&#9776;</button>
-    </div>
+   <div class="nav-container">
+  <div class="logo">Futuro<span>USA</span></div>
+  
+  <ul class="nav-links" id="navLinks">
+    <li><a href="#inicio" class="active">Inicio</a></li>
+    <li><a href="#info">Info</a></li>
+    <li><a href="#comunidad">Comunidad</a></li>
+    <li><a href="#contacto">Contacto</a></li>
+  </ul>
+
+  <!-- Caja de búsqueda -->
+  <div class="search-container">
+    <input type="text" id="busquedaInput" placeholder="Buscar..." />
+    <button onclick="buscar()">🔍</button>
+  </div>
+
+  <div class="nav-toggle" id="navToggle">☰</div>
+</div>
+
   </nav>
 
   <header class="hero" role="banner">

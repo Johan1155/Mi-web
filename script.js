@@ -107,3 +107,16 @@ btnBuscar.addEventListener('click', () => {
       resultadosDiv.textContent = 'Error al conectar con el servidor.';
     });
 });
+function buscar() {
+  const query = document.getElementById('busquedaInput').value;
+
+  fetch(`http://localhost:3000/buscar?q=${encodeURIComponent(query)}`)
+    .then(res => res.json())
+    .then(data => {
+      alert(data.resultados.length ? data.resultados.join('\n') : 'No se encontraron resultados.');
+    })
+    .catch(error => {
+      console.error('Error al buscar:', error);
+      alert('Error al conectar con el servidor.');
+    });
+}
