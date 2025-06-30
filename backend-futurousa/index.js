@@ -5,7 +5,8 @@ const admin = require('firebase-admin'); // Importa la librería de Firebase Adm
 // --- CONFIGURACIÓN DE FIREBASE ---
 // IMPORTANTE: Asegúrate de que 'serviceAccountKey.json' esté en la misma carpeta que index.js
 // y que su nombre coincida exactamente con el archivo que descargaste.
-const serviceAccount = require('./serviceAccountKey.json'); 
+console.log('Intentando cargar serviceAccountKey.json...');
+const serviceAccount = require('./serviceAccountKey.json');
 
 // Inicializa Firebase Admin SDK con tus credenciales
 // Esta es la parte que necesita el archivo serviceAccountKey.json para funcionar.
@@ -18,9 +19,8 @@ try {
   console.error('Error al inicializar Firebase Admin SDK:', error.message);
   console.error('Asegúrate de que serviceAccountKey.json esté en la carpeta correcta y sea válido.');
   // Puedes decidir salir del proceso si la inicialización es crítica
-  // process.exit(1); 
+  // process.exit(1);
 }
-
 
 const db = admin.firestore(); // Obtiene una referencia a tu base de datos Firestore
 
@@ -57,7 +57,7 @@ app.get('/buscar', async (req, res) => {
     // Itera sobre cada documento encontrado
     snapshot.forEach(doc => {
       const data = doc.data(); // Obtiene los datos del documento
-      
+
       // Comprueba si la consulta está en el título o descripción del recurso
       // Puedes añadir más campos si quieres que la búsqueda sea más amplia (ej. data.tags)
       if (data.titulo && data.titulo.toLowerCase().includes(q)) {
@@ -103,7 +103,6 @@ app.post('/contacto', async (req, res) => {
     res.status(500).json({ error: 'Error interno del servidor al enviar mensaje.' });
   }
 });
-
 
 // Iniciar el servidor
 app.listen(PORT, () => {
