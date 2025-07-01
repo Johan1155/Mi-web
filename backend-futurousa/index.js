@@ -6,7 +6,9 @@ const admin = require('firebase-admin'); // Importa la librería de Firebase Adm
 // IMPORTANTE: Asegúrate de que 'serviceAccountKey.json' esté en la misma carpeta que index.js
 // y que su nombre coincida exactamente con el archivo que descargaste.
 console.log('Intentando cargar serviceAccountKey.json...');
-const serviceAccount = require('./serviceAccountKey.json');
+// Leer las credenciales de Firebase desde una variable de entorno en Render
+// ESTA VARIABLE DE ENTORNO DEBE CONTENER TODO EL JSON DE serviceAccountKey.json COMO UN STRING
+const serviceAccount = JSON.parse(process.env.FIREBASE_SERVICE_ACCOUNT_KEY_JSON);
 
 // Inicializa Firebase Admin SDK con tus credenciales
 // Esta es la parte que necesita el archivo serviceAccountKey.json para funcionar.
@@ -26,7 +28,7 @@ const db = admin.firestore(); // Obtiene una referencia a tu base de datos Fires
 
 // --- CONFIGURACIÓN DEL SERVIDOR EXPRESS ---
 const app = express();
-const PORT = 3000;
+const PORT = process.env.PORT || 3000; // Render asignará un puerto, o usará 3000 localmente
 
 // Middleware para permitir CORS (Comunicación entre frontend y backend)
 app.use(cors());
